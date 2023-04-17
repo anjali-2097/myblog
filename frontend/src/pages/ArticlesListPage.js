@@ -6,7 +6,7 @@ import ArticlesList from '../components/ArticlesList'
 
 function ArticlesListPage() {
   const [articles,setArticles] = useState([]);
-  const AWS_URL = "https://a0jcwc14r9.execute-api.us-east-1.amazonaws.com/Dev"
+  const AWS_URL = process.env.REACT_APP_AWS_URL;
   useEffect(()=>{
     const fetchBlogs = async() =>{
       const response = await axios.get(`${AWS_URL}`);
